@@ -7,6 +7,6 @@ describe('Home', () => {
   it('renders a heading', () => {
     render(<Title title="Test title" />)
     const element = screen.getByTestId('title')
-    expect(element.textContent).toEqual("Test title")
+    expect(element.textContent).toEqual("Test title!")
   })
 })
