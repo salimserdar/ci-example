@@ -1,4 +1,7 @@
 name: Status Check
+on:
+  pull_request:
+    branches: [ develope ]
 jobs:
   unit-test:
     name: Run Tests
