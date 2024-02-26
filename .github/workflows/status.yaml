@@ -1,0 +1,32 @@
+name: Status Check
+on:
+  pull_request:
+    branches: [develope]
+  pull_request:
+    branches: [develope]
+jobs:
+  unit-test:
+    name: Run Tests
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+      - run: npm install
+      - run: npm run test
+  e2e-test:
+      needs: deploy-production
+      runs-on: ubuntu-latest
+      steps:
+        - name: Checkout
+          uses: actions/checkout@v3
+
+        - name: Cypress run
+          uses: cypress-io/github-action@v3
+          with:
+            project: ./
+            browser: chrome
+            build: npm run build
+            start: npm run start
+            wait-on: "http://localhost:3000"
