@@ -2,8 +2,6 @@ name: Status Check
 on:
   pull_request:
     branches: [develop]
-  pull_request:
-    branches: [develop]
 jobs:
   unit-test:
     name: Run Tests
