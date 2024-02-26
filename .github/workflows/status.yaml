@@ -1,7 +1,8 @@
-name: Status Check
+name: PR status checks
 on:
   pull_request:
-    branches: [ develope ]
+    branches: [ develop ]
+    types: [assigned, opened, synchronize, reopened]
 jobs:
   unit-test:
     name: Run Tests
