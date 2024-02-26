@@ -1,7 +1,10 @@
 name: Status Check
 on:
+  push:
+    branches:
+      - develop
   pull_request:
-    branches: [develop]
+    branches: develop
 jobs:
   unit-test:
     name: Run Tests
